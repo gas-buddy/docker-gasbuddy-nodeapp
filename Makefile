@@ -1,12 +1,13 @@
-IMAGENAME := gasbuddy/node-app:production
+IMAGENAME ?= gasbuddy/node-app
+IMAGETAG ?= production
 
 all: build
 
 build:
-	docker build -t $(IMAGENAME) .
+	docker build -t $(IMAGENAME):$(IMAGETAG) .
 
 clean:
-	docker images | awk -F' ' '{if ($$1=="$(IMAGENAME)") print $$3}' | xargs -r docker rmi
+	docker images | awk -F' ' '{if ($$1=="$(IMAGENAME)" && $$2=="$(IMAGETAG)") print $$3}' | xargs docker rmi
 
 publish:
-	docker push $(IMAGENAME)
+	docker push $(IMAGENAME):$(IMAGETAG)
