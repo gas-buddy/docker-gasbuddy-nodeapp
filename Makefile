@@ -1,4 +1,4 @@
-IMAGENAME = gasbuddy/node-app:production
+IMAGENAME := gasbuddy/node-app:production
 
 all: build
 
