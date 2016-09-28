@@ -1,6 +1,8 @@
 IMAGENAME ?= gasbuddy/node-app
 IMAGETAG ?= production
 
+.PHONY: all build clean publish
+
 all: build
 
 build:
