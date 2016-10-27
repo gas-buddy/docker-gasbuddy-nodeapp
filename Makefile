@@ -1,5 +1,5 @@
 IMAGENAME ?= gasbuddy/node-app
-IMAGETAG ?= 6-production
+IMAGETAG ?= wercker
 
 .PHONY: all build clean publish
 
