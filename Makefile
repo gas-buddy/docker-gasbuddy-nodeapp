@@ -1,5 +1,5 @@
 IMAGENAME ?= gasbuddy/node-app
-IMAGETAG ?= wercker-npm5
+IMAGETAG ?= wercker-node8
 
 .PHONY: all build clean publish
 
