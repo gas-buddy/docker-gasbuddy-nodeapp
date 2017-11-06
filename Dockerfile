@@ -1,19 +1,15 @@
-FROM mhart/alpine-node:6
+FROM node:6-slim
 
-MAINTAINER Jean-Charles Sisk <jeancharles@gasbuddy.com>
+MAINTAINER GasBuddy <amougeot@gasbuddy.com>
 
-RUN apk add --no-cache git && \
-    apk add --no-cache --virtual .npm-deps openssl make gcc g++ python && \
-    apk add --no-cache libcurl curl && \
-    apk add --no-cache --virtual .yarn-deps gnupg tar && \
-    mkdir -p /opt && \
-    curl -sL https://yarnpkg.com/latest.tar.gz | tar xz -C /opt && \
-    mv /opt/dist /opt/yarn && \
-    ln -s /opt/yarn/bin/yarn /usr/local/bin && \
-    apk del .yarn-deps
+RUN apt-get update && \
+    apt-get install -yq git && \
+    apt-get install -yq openssl make gcc g++ python && \
+    apt-get install -yq curl && \
+    apt-get install -yq gnupg tar && \
+    mkdir -p /opt
 
 COPY npmrc /root/.npmrc
-
 WORKDIR /data
 
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/bin/bash"]
