@@ -6,8 +6,9 @@ MAINTAINER Jean-Charles Sisk <jeancharles@gasbuddy.com>
 RUN adduser --system node-app
 
 # Install dumb-init
-RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb
-RUN dpkg -i dumb-init_*.deb
+RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb \
+  && dpkg -i dumb-init_*.deb \
+  && rm dumb-init_*.deb
 
 # Install gosu
 ENV GOSU_VERSION 1.7
@@ -20,7 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu \
     && gosu nobody true \
-    && apt-get purge -y --auto-remove ca-certificates wget
+    && apt-get purge -y --auto-remove ca-certificates wget \
+    && apt-get clean
  
 RUN npm init -f > /dev/null
 
