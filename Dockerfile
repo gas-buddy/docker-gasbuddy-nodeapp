@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:6
+FROM mhart/alpine-node:8
 
 MAINTAINER Jean-Charles Sisk <jeancharles@gasbuddy.com>
 
