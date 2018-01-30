@@ -12,6 +12,7 @@ RUN npm init -f > /dev/null
 WORKDIR /pipeline/source
 
 COPY entrypoint.sh /entrypoint.sh
+COPY fakesh /usr/local/bin/
 
 ENV NO_UPDATE_NOTIFIER 1
 
