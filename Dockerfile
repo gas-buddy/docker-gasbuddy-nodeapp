@@ -13,6 +13,8 @@ WORKDIR /pipeline/source
 
 COPY entrypoint.sh /entrypoint.sh
 
+ENV NO_UPDATE_NOTIFIER 1
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD [ "node-app" ]
