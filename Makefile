@@ -1,5 +1,5 @@
 IMAGENAME ?= gasbuddy/node-app
-IMAGETAG ?= 8-shell
+IMAGETAG ?= 8-puppeteer-production
 
 .PHONY: all build clean publish
 
