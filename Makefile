@@ -1,5 +1,5 @@
 IMAGENAME ?= gasbuddy/node-app
-IMAGETAG ?= 8-production
+IMAGETAG ?= 10-production
 
 .PHONY: all build clean publish
 
