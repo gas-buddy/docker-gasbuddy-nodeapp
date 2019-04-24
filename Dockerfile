@@ -1,6 +1,6 @@
-FROM node:8-slim
+FROM node:10-slim
 
-MAINTAINER GasBuddy <amougeot@gasbuddy.com>
+MAINTAINER GasBuddy <developers@gasbuddy.com>
 
 RUN apt-get update && \
     apt-get install -yq git && \
