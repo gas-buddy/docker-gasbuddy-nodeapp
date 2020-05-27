@@ -1,6 +1,6 @@
-FROM node:10-alpine
+FROM node:12-alpine
 
-MAINTAINER Jean-Charles Sisk <jeancharles@gasbuddy.com>
+MAINTAINER Max Metral <max@gasbuddy.com>
 
 ARG TINI_VERSION=0.16.1
 
