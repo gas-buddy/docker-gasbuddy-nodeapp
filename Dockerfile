@@ -1,13 +1,15 @@
-FROM mhart/alpine-node:10
+FROM node:12-slim
 
-MAINTAINER Jean-Charles Sisk <jeancharles@gasbuddy.com>
+MAINTAINER GasBuddy <vpatel@gasbuddy.com>
 
-RUN apk add --no-cache git && \
-    apk add --no-cache --virtual .npm-deps openssl make gcc g++ python && \
-    apk add --no-cache libcurl curl
+RUN apt-get update && \
+    apt-get install -yq git && \
+    apt-get install -yq openssl make gcc g++ python && \
+    apt-get install -yq curl && \
+    apt-get install -yq gnupg tar && \
+    mkdir -p /opt
 
 COPY npmrc /root/.npmrc
-
 WORKDIR /data
 
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/bin/bash"]
