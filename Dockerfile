@@ -6,7 +6,7 @@ MAINTAINER GasBuddy <vpatel@gasbuddy.com>
 RUN adduser --system node-app
 
 # Install wget gpg dirmngr
-RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates wget gpg dirmngr
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates wget gpg dirmngr curl
 
 # Install dumb-init
 RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb \
