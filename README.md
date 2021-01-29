@@ -1,7 +1,7 @@
 # docker-gasbuddy-nodeapp
 A docker image for running a node application with GasBuddy opinions. Some of those opinions include:
 
-* Alpine
+* Debian
 * Least user privilege
 * Run npm install at build time not runtime
 * Use an NPM_TOKEN environment variable for namespaced (private) packages

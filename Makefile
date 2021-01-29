@@ -1,5 +1,5 @@
 IMAGENAME ?= gasbuddy/node-app
-IMAGETAG ?= 10-shell
+IMAGETAG ?= debian-12-production
 
 .PHONY: all build clean publish
 
