@@ -9,8 +9,6 @@ LABEL org.opencontainers.image.title="GasBuddy Node.js Application Image"
 LABEL org.opencontainers.image.description="Custom Docker image for GasBuddy Node.js applications"
 LABEL org.opencontainers.image.source="https://github.com/gas-buddy/docker-gasbuddy-nodeapp"
 
-LABEL maintainer="Max Metral <max@gasbuddy.com>"
-
 RUN apk add --no-cache git && \
     apk add --no-cache --virtual .npm-deps openssl make gcc g++ python3 && \
     apk add --no-cache libcurl curl
