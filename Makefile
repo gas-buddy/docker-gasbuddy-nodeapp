@@ -1,5 +1,8 @@
+# NOTE: This Makefile is maintained for legacy purposes only.
+# GitHub Actions is now the primary method for building and publishing images.
+
 IMAGENAME ?= gasbuddy/node-app
-IMAGETAG ?= 14-shell
+IMAGETAG ?= 18-alpine
 
 .PHONY: all build clean publish
 
