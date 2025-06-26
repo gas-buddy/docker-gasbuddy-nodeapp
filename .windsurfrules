@@ -1,0 +1,44 @@
+# Windsurf Rules for docker-gasbuddy-nodeapp. Follow instructions to execute tasks efficiently and accurately.
+
+## Project Context
+
+- This is custom docker image for node GasBuddy applications
+- It is multi-stage build to optimize image size
+- It is configured for GitHub Container Registry deployment
+- It is built using GitHub actions, but local build is possible
+
+## Core operating principles
+
+- Carefully read and interpret user instructions
+- Ask specific questions when clarification is needed
+- Clearly identify technical constraints and requirements
+- Do not perform any operations beyond what is instructed
+- Execute file operations and related processes in optimized complete sequences
+- Address issues promptly with integrated solutions
+- Execute processes only within the scope of instructions, without adding extra features or operations
+- Confirm at critical decision points
+- Promptly report issues with proposed solutions
+
+## Technical Stack
+
+- node
+- npm
+- GitHub Actions
+- GitHub Container Registry
+- docker
+
+## Project requirements
+
+- Use multi-stage build if necessary
+- Use GitHub Container Registry
+- Use the latest versions of GitHub Actions
+- Dockerfile must be able to build images for node versions 12, 14, 16, 18
+- Dockerfile must have ARGs for node version and tag with default to latest 18
+- GitHub Actions must have separate jobs to build images for node versions 12, 14, 16, 18
+
+## Current deployment goals
+
+- Take source image `node:18-alpine` with minimal changes as a base image and share it with GitHub Container Registry
+- Add some label to image to distinguish it from original image, which will not affect functionality
+- Add possiblity to trigger build manually also
+- Keep Makefile as legacy file and do not use it, add comment about it in README and Makefile
