@@ -17,8 +17,8 @@ RUN apk add --no-cache git && \
     apk add --no-cache --virtual .npm-deps openssl make gcc g++ python3 && \
     apk add --no-cache libcurl curl && \
     apk add --no-cache tini su-exec coreutils && \
-    chmod +x /entrypoint.sh && \
-    chmod +x /usr/local/bin/fakesh
+    chmod 755 /entrypoint.sh && \
+    chmod 755 /usr/local/bin/fakesh
 
 WORKDIR /pipeline/source
 
